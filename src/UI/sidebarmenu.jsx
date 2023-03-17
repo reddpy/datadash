@@ -1,10 +1,17 @@
-import { BankOutlined, BuildOutlined } from "@ant-design/icons";
-import { Menu } from "antd";
-import { Header } from "antd/es/layout/layout";
+import {
+  BankOutlined,
+  BuildOutlined,
+  TwitterCircleFilled,
+  LinkedinFilled,
+} from "@ant-design/icons";
+import { Menu, Button } from "antd";
+import { Footer } from "antd/es/layout/layout";
+import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { colors } from "../../constants";
 import logo from "../assets/Logo.png";
 
-const headerStyle = {
+const headerFooterStyle = {
   color: "#fff",
   backgroundColor: "white",
 };
@@ -32,24 +39,52 @@ const items = [
 ];
 
 const SideBarMenu = () => {
+  const [key, setKey] = useState("/");
   const navigate = useNavigate();
+
   const onNavigate = (e) => {
+    setKey(e.key);
     navigate(e.key);
   };
+
   return (
     <>
-      <NavLink to="/">
-          <div style={headerStyle}>
-            <img width={200} src={logo} />
-          </div>
-        </NavLink>
+      <NavLink
+        to="/"
+        onClick={() => {
+          setKey();
+        }}
+      >
+        <div style={headerFooterStyle}>
+          <img width={200} src={logo} />
+        </div>
+      </NavLink>
       <Menu
-        style={{ minHeight: '95%' }}
+        style={{ minHeight: "82%" }}
         onClick={onNavigate}
         defaultOpenKeys={["founder_activity", "vc_activity"]}
         mode="inline"
         items={items}
+        selectedKeys={key}
       />
+      <Footer style={{ backgroundColor: "white", textAlign: "center" }}>
+        <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+          <p>
+            <a href="https://twitter.com/drawbridge_gg">
+              <Button
+                type="primary"
+                shape="circle"
+                icon={<TwitterCircleFilled />}
+              />
+            </a>
+          </p>
+          <p>
+            <a href="https://www.linkedin.com/company/drawbridge-data">
+              <Button type="primary" shape="circle" icon={<LinkedinFilled />} />
+            </a>
+          </p>
+        </div>
+      </Footer>
     </>
   );
 };

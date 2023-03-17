@@ -1,9 +1,17 @@
-import { Layout ,ConfigProvider } from "antd";
+import { Layout, ConfigProvider } from "antd";
 
 import { Outlet } from "react-router-dom";
 import SideBarMenu from "../UI/sidebarmenu";
 const { Content, Sider, Footer } = Layout;
-import {colors} from "../../constants";
+import { colors } from "../../constants";
+import { NavLink } from "react-router-dom";
+import logo from "../assets/Logo.png";
+import { Header } from "antd/es/layout/layout";
+
+const headerStyle = {
+  color: "#fff",
+  backgroundColor: "white",
+};
 
 const Root = () => {
   return (
@@ -15,7 +23,12 @@ const Root = () => {
       }}
     >
       <Layout style={{ minHeight: "98vh" }}>
-        <Sider width={275}>
+        <Sider
+          width={275}
+          style={{
+            // overflow: "auto",
+          }}
+        >
           <SideBarMenu />
         </Sider>
         <Layout>
