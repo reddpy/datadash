@@ -26,21 +26,9 @@ const items = [
     getItem("Investments", "vca/investments"),
     getItem("Investor Profiles", "vca/investorprofiles"),
   ]),
-  getItem("VC Activity", "vc_activity", <BankOutlined />),
-  getItem("VC Activity", "vc_activity", <BankOutlined />),
-  getItem("VC Activity", "vc_activity", <BankOutlined />),
-  getItem("VC Activity", "vc_activity", <BankOutlined />),
-  getItem("VC Activity", "vc_activity", <BankOutlined />),
-  getItem("VC Activity", "vc_activity", <BankOutlined />),
-  getItem("VC Activity", "vc_activity", <BankOutlined />),
-  getItem("VC Activity", "vc_activity", <BankOutlined />),
-  getItem("VC Activity", "vc_activity", <BankOutlined />),
-  getItem("VC Activity", "vc_activity", <BankOutlined />),
-  getItem("VC Activity", "vc_activity", <BankOutlined />),
-  getItem("VC Activity", "vc_activity", <BankOutlined />),
 ];
 
-const SidebarLinks = () => {
+const SidebarLinks = (props) => {
   const [key, setKey] = useState("/");
   const navigate = useNavigate();
 

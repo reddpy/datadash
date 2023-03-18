@@ -9,8 +9,8 @@ import { Space } from "antd";
 
 const SidebarFooter = () => {
   return (
-    <Footer style={{ backgroundColor: "white" }}>
-      <Space size={"large"}>
+    <Footer style={{ backgroundColor: "white", textAlign: 'center' }}>
+      <Space size={"large"}  wrap={true}>
         <Button
           shape="circle"
           icon={<TwitterOutlined />}

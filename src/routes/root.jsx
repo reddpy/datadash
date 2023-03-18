@@ -1,10 +1,10 @@
-import { ConfigProvider, Layout, Space } from "antd";
+import { ConfigProvider, Layout } from "antd";
 
 import { Outlet } from "react-router-dom";
 import { colors } from "../../constants";
+import SidebarFooter from "../UI/sidebar/sidebarfooter";
 import SidebarLinks from "../UI/sidebar/sidebarlinks";
 import SidebarLogo from "../UI/sidebar/sidebarlogo";
-import SidebarFooter from "../UI/sidebar/sidebarfooter";
 const { Content, Sider, Footer } = Layout;
 
 const Root = () => {
@@ -29,17 +29,15 @@ const Root = () => {
             bottom: 0,
           }}
         >
-          <SidebarLogo />
-          <div>
-            <SidebarLinks />
-            <SidebarFooter />
-          </div>
+          <SidebarLogo/>
+          <SidebarLinks/>
+          <SidebarFooter />
         </Sider>
         <Layout style={{ marginLeft: 300 }}>
           <Content>
             <Outlet />
           </Content>
-          <Footer textAlign='center' style={{ textAlign: "center" }}>
+          <Footer style={{ textAlign: "center" }}>
             Dashboards ©2023 Created by Drawbridge Data
           </Footer>
         </Layout>

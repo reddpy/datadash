@@ -6,7 +6,7 @@ const headerFooterStyle = {
     backgroundColor: "white",
   };  
 
-const SidebarLogo = () => {
+const SidebarLogo = (props) => {
   return (
     <NavLink
       to="/"
