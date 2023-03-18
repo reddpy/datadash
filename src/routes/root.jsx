@@ -1,4 +1,4 @@
-import { ConfigProvider, Layout } from "antd";
+import { ConfigProvider, Layout, Space } from "antd";
 
 import { Outlet } from "react-router-dom";
 import { colors } from "../../constants";
@@ -17,16 +17,29 @@ const Root = () => {
       }}
     >
       <Layout style={{ minHeight: "98vh" }}>
-        <Sider width={275}>
+        <Sider
+          width={275}
+          style={{
+            backgroundColor: "white",
+            overflow: "auto",
+            height: "100vh",
+            position: "fixed",
+            left: 0,
+            top: 0,
+            bottom: 0,
+          }}
+        >
           <SidebarLogo />
-          <SidebarLinks />
-          <SidebarFooter />
+          <div>
+            <SidebarLinks />
+            <SidebarFooter />
+          </div>
         </Sider>
-        <Layout>
-          <Content style={{ paddingLeft: "2%" }}>
+        <Layout style={{ marginLeft: 300 }}>
+          <Content>
             <Outlet />
           </Content>
-          <Footer style={{ textAlign: "center" }}>
+          <Footer textAlign='center' style={{ textAlign: "center" }}>
             Dashboards ©2023 Created by Drawbridge Data
           </Footer>
         </Layout>
