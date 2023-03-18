@@ -1,19 +1,18 @@
-import { Layout, ConfigProvider } from "antd";
+import { ConfigProvider, Layout } from "antd";
 
+import { Grid } from "antd";
+import { Content } from "antd/es/layout/layout";
 import { Outlet } from "react-router-dom";
-import SideBarMenu from "../UI/sidebarmenu";
-const { Content, Sider, Footer } = Layout;
 import { colors } from "../../constants";
-import { NavLink } from "react-router-dom";
-import logo from "../assets/Logo.png";
-import { Header } from "antd/es/layout/layout";
-
-const headerStyle = {
-  color: "#fff",
-  backgroundColor: "white",
-};
+import DDFooter from "../UI/ddfooter";
+import DesktopMenu from "../UI/desktop/desktopmenu";
+import MobileMenu from "../UI/mobile/mobilemenu";
 
 const Root = () => {
+  const screens = Grid.useBreakpoint();
+  const mobile = (screens?.xs || screens?.sm)  && !screens?.md;
+  console.log(screens)
+
   return (
     <ConfigProvider
       theme={{
@@ -23,21 +22,12 @@ const Root = () => {
       }}
     >
       <Layout style={{ minHeight: "98vh" }}>
-        <Sider
-          width={275}
-          style={{
-            // overflow: "auto",
-          }}
-        >
-          <SideBarMenu />
-        </Sider>
+        {mobile ? <MobileMenu /> : <DesktopMenu />}
         <Layout>
-          <Content style={{ paddingLeft: "2%" }}>
+          <Content style={{ marginLeft: 300 }}>
             <Outlet />
           </Content>
-          <Footer style={{ textAlign: "center" }}>
-            Dashboards ©2023 Created by Drawbridge Data
-          </Footer>
+          <DDFooter />
         </Layout>
       </Layout>
     </ConfigProvider>
