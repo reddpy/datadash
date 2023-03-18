@@ -1,15 +1,26 @@
-import { Button, Drawer, Radio, Space } from 'antd';
+import { Button, Drawer, Space } from 'antd';
+import { Header } from 'antd/es/layout/layout';
 import { useState } from 'react';
-import blueD from '../../assets/blueD.png'
-import SidebarLinks from '../menu_components/sidebarlinks';
-import Logo from '../../assets/Logo.png'
+import Logo from '../../assets/Logo.png';
+import blueD from '../../assets/blueD.png';
 import SidebarFooter from '../menu_components/sidebarfooter';
+import SidebarLinks from '../menu_components/sidebarlinks';
+
+
+const headerStyle = {
+  position: 'sticky',
+  top: 0, zIndex: 1,
+  textAlign: 'start',
+  backgroundColor: 'white',
+  width: '100%',
+  paddingLeft: '15px',
+  paddingRight: '15px',
+  paddingTop: '5px'
+};
 
 
 const MobileMenu = () => {
-    const [current, setCurrent] = useState('mail');
-
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState('left');
   const showDrawer = () => {
     setOpen(true);
@@ -17,39 +28,33 @@ const MobileMenu = () => {
   const onClose = () => {
     setOpen(false);
   };
-  const onChange = (e) => {
-    setPlacement(e.target.value);
-  };
-      return (
-      <>
-       <Space>
-        <Radio.Group value={placement} onChange={onChange}>
-          <Radio value="top">top</Radio>
-          <Radio value="right">right</Radio>
-          <Radio value="bottom">bottom</Radio>
-          <Radio value="left">left</Radio>
-        </Radio.Group>
-        <Button type="primary" onClick={showDrawer}>
-          Open
-        </Button>
-      </Space>
+
+  return (
+    <>
+      <Header style={headerStyle}>
+        <Space size={275}>
+          <Button type="primary" shape='circle' size='large' onClick={showDrawer} >
+            <img width={25} src={blueD} />
+          </Button>
+        </Space>
+      </Header >
       <Drawer
-        title={<img style={{width:'200px'}} src={Logo}/>}
-        placement={placement}
+        title={<img style={{ width: '200px' }} src={Logo} />}
+        placement={'left'}
         closable={false}
         onClose={onClose}
         open={open}
         key={placement}
         width={250}
-        bodyStyle={{padding: 0}}
-        headerStyle={{padding:0}}
+        bodyStyle={{ padding: 0 }}
+        headerStyle={{ padding: 0 }}
       >
-       <SidebarLinks/>
-       <SidebarFooter/>
+        <SidebarLinks />
+        <SidebarFooter />
       </Drawer>
     </>
-      
-      );
+  );
+
 };
 
 export default MobileMenu;
