@@ -1,17 +1,11 @@
-import { Layout, ConfigProvider } from "antd";
+import { ConfigProvider, Layout } from "antd";
 
 import { Outlet } from "react-router-dom";
-import SideBarMenu from "../UI/sidebarmenu";
-const { Content, Sider, Footer } = Layout;
 import { colors } from "../../constants";
-import { NavLink } from "react-router-dom";
-import logo from "../assets/Logo.png";
-import { Header } from "antd/es/layout/layout";
-
-const headerStyle = {
-  color: "#fff",
-  backgroundColor: "white",
-};
+import SidebarLinks from "../UI/sidebar/sidebarlinks";
+import SidebarLogo from "../UI/sidebar/sidebarlogo";
+import SidebarFooter from "../UI/sidebar/sidebarfooter";
+const { Content, Sider, Footer } = Layout;
 
 const Root = () => {
   return (
@@ -23,13 +17,10 @@ const Root = () => {
       }}
     >
       <Layout style={{ minHeight: "98vh" }}>
-        <Sider
-          width={275}
-          style={{
-            // overflow: "auto",
-          }}
-        >
-          <SideBarMenu />
+        <Sider width={275}>
+          <SidebarLogo />
+          <SidebarLinks />
+          <SidebarFooter />
         </Sider>
         <Layout>
           <Content style={{ paddingLeft: "2%" }}>
