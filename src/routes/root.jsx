@@ -1,4 +1,4 @@
-import { ConfigProvider, Layout } from "antd";
+import { ConfigProvider, Layout, Spin } from "antd";
 
 import { Grid } from "antd";
 import { Content } from "antd/es/layout/layout";
@@ -10,8 +10,11 @@ import MobileMenu from "../UI/mobile/mobilemenu";
 
 const Root = () => {
   const screens = Grid.useBreakpoint();
-  const mobile = (screens?.xs || screens?.sm)  && !screens?.md;
-  console.log(screens)
+  const mobile = (screens?.xs || screens?.sm) && !screens?.md;
+
+  if (screens === undefined || screens === {} || mobile === undefined) {
+    return <Spin size="large" />;
+  }
 
   return (
     <ConfigProvider
@@ -24,7 +27,7 @@ const Root = () => {
       <Layout style={{ minHeight: "98vh" }}>
         {mobile ? <MobileMenu /> : <DesktopMenu />}
         <Layout>
-          <Content style={{ marginLeft: 300 }}>
+          <Content style={{ marginLeft: !mobile ? 300 : 0 }}>
             <Outlet />
           </Content>
           <DDFooter />
