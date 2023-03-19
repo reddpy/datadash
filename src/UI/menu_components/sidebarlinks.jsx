@@ -3,8 +3,8 @@ import {
   BuildOutlined
 } from "@ant-design/icons";
 import { Menu } from "antd";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useRouterActiveStore } from "../../store/navigationstore";
 
 function getItem(label, key, icon, children, type) {
   return {
@@ -28,12 +28,12 @@ const items = [
   ]),
 ];
 
-const SidebarLinks = (props) => {
-  const [key, setKey] = useState("/");
+const SidebarLinks = () => {
   const navigate = useNavigate();
+  const activeLink = useRouterActiveStore((state) => state.activeLink);
 
   const onNavigate = (e) => {
-    setKey(e.key);
+    useRouterActiveStore.setState({ activeLink: e.key })
     navigate(e.key);
   };
 
@@ -44,7 +44,7 @@ const SidebarLinks = (props) => {
         defaultOpenKeys={["founder_activity", "vc_activity"]}
         mode="inline"
         items={items}
-        selectedKeys={key}
+        selectedKeys={activeLink === '/' ? '' : activeLink}
       />
     </>
   );

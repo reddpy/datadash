@@ -5,6 +5,7 @@ import Logo from '../../assets/Logo.png';
 import blueD from '../../assets/blueD.png';
 import SidebarFooter from '../menu_components/sidebarfooter';
 import SidebarLinks from '../menu_components/sidebarlinks';
+import SidebarLogo from '../menu_components/sidebarlogo';
 
 
 const headerStyle = {
@@ -39,7 +40,7 @@ const MobileMenu = () => {
         </Space>
       </Header >
       <Drawer
-        title={<img style={{ width: '200px' }} src={Logo} />}
+        title={<SidebarLogo />}
         placement={'left'}
         closable={false}
         onClose={onClose}
