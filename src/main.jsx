@@ -1,7 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import CorporateDataPage, { loader as CorporateDataLoader } from "./routes/fna/corporatedata";
+import LocationsPage, { loader as LocationsLoader } from "./routes/fna/locations";
+import StealthFounderPage, { loader as StealthFounderLoader } from "./routes/fna/stealthfounder";
 import Root from "./routes/root";
+import InvestmentProfilesPage, { loader as InvestmentProfilesLoader } from "./routes/vca/investmentprofiles";
+import InvestmentsPage, { loader as InvestmentsLoader } from "./routes/vca/investments";
 
 const routerObj = createBrowserRouter([
   {
@@ -10,23 +15,28 @@ const routerObj = createBrowserRouter([
     children: [
       {
         path: "fna/stealthfounder",
-        element: <p>founder activity stealth founders</p>,
+        element: <StealthFounderPage />,
+        loader: StealthFounderLoader
       },
       {
         path: "fna/corporatedata",
-        element: <p>founder activity corporatedata founders</p>,
+        element: <CorporateDataPage />,
+        loader: CorporateDataLoader
       },
       {
         path: "fna/locations",
-        element: <p>founder activity locations</p>,
+        element: <LocationsPage />,
+        loader: LocationsLoader
       },
       {
         path: "vca/investments",
-        element: <p>vc activity investments</p>,
+        element: <InvestmentsPage />,
+        loader: InvestmentsLoader
       },
       {
         path: "vca/investorprofiles",
-        element: <p>vc activity investorprofiles</p>,
+        element: <InvestmentProfilesPage />,
+        loader: InvestmentProfilesLoader
       },
     ],
   },
