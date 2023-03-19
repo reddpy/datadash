@@ -12,7 +12,7 @@ const Root = () => {
   const screens = Grid.useBreakpoint();
   const mobile = (screens?.xs || screens?.sm) && !screens?.md;
 
-  if (screens === undefined || screens === {} || mobile === undefined) {
+  if (screens === undefined || screens == {} || mobile === undefined) {
     return <Spin size="large" />;
   }
 
