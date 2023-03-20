@@ -24,10 +24,10 @@ const Root = () => {
         },
       }}
     >
-      <Layout style={{ minHeight: "100vh"}}>
+      <Layout style={{ minHeight: "100vh" }}>
         {mobile ? <MobileMenu /> : <DesktopMenu />}
         <Layout>
-          <Content style={{ marginLeft: !mobile ? 300 : 0 }}>
+          <Content style={{ paddingLeft: !mobile ? 300 : 0 }}>
             <Outlet />
           </Content>
           <DDFooter />
