@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import './main.css';
 import CorporateDataPage, { loader as CorporateDataLoader } from "./routes/fna/corporatedata";
 import LocationsPage, { loader as LocationsLoader } from "./routes/fna/locations";
 import StealthFounderPage, { loader as StealthFounderLoader } from "./routes/fna/stealthfounder";
