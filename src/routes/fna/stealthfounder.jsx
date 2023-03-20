@@ -16,7 +16,6 @@ const StealthFounderPage = () => {
 
   useEffect(() => {
   }, [data]);
-  console.log(data);
 
   return (
     <>

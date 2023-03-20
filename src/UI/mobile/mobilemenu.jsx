@@ -1,11 +1,10 @@
+import { MenuUnfoldOutlined } from '@ant-design/icons';
 import { Button, Drawer, Space } from 'antd';
 import { Header } from 'antd/es/layout/layout';
 import { useState } from 'react';
-import Logo from '../../assets/Logo.png';
-import blueD from '../../assets/blueD.png';
 import SidebarFooter from '../menu_components/sidebarfooter';
 import SidebarLinks from '../menu_components/sidebarlinks';
-
+import SidebarLogo from '../menu_components/sidebarlogo';
 
 const headerStyle = {
   position: 'sticky',
@@ -33,13 +32,12 @@ const MobileMenu = () => {
     <>
       <Header style={headerStyle}>
         <Space size={275}>
-          <Button type="primary" shape='circle' size='large' onClick={showDrawer} >
-            <img width={25} src={blueD} />
+          <Button type="primary" shape='circle' size='large' onClick={showDrawer} icon={<MenuUnfoldOutlined />} >
           </Button>
         </Space>
       </Header >
       <Drawer
-        title={<img style={{ width: '200px' }} src={Logo} />}
+        title={<SidebarLogo />}
         placement={'left'}
         closable={false}
         onClose={onClose}
