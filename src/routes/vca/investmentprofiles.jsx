@@ -1,13 +1,14 @@
 import { useLoaderData } from "react-router-dom";
+import ComingSoon from "../../UI/comingsoon";
 
 export const loader = () => {
-  return 'wow'
-}
+  return "wow";
+};
 
 const InvestmentProfilesPage = () => {
   const data = useLoaderData();
 
-  return <p>vc activity investorprofiles</p>;
-}
+  return <ComingSoon />;
+};
 
 export default InvestmentProfilesPage;
