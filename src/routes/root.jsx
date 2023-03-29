@@ -1,9 +1,8 @@
-import { ConfigProvider, Layout, Spin } from "antd";
-
-import { Grid } from "antd";
+import { ConfigProvider, Grid, Layout, Spin } from "antd";
 import { Content } from "antd/es/layout/layout";
 import { Outlet } from "react-router-dom";
 import { colors } from "../../constants";
+import { useThemeStore } from "../store/themestore";
 import DDFooter from "../UI/ddfooter";
 import DesktopMenu from "../UI/desktop/desktopmenu";
 import MobileMenu from "../UI/mobile/mobilemenu";
@@ -11,6 +10,7 @@ import MobileMenu from "../UI/mobile/mobilemenu";
 const Root = () => {
   const screens = Grid.useBreakpoint();
   const mobile = (screens?.xs || screens?.sm) && !screens?.md;
+  const theme = useThemeStore((state) => state.theme);
 
   if (screens === undefined || screens == {} || mobile === undefined) {
     return <Spin size="large" />;
@@ -24,10 +24,10 @@ const Root = () => {
         },
       }}
     >
-      <Layout style={{ minHeight: "98vh" }}>
+      <Layout style={{ minHeight: "100vh" }}>
         {mobile ? <MobileMenu /> : <DesktopMenu />}
         <Layout>
-          <Content style={{ marginLeft: !mobile ? 300 : 0 }}>
+          <Content style={{ paddingLeft: !mobile ? 300 : 0 }}>
             <Outlet />
           </Content>
           <DDFooter />
