@@ -27,7 +27,13 @@ const Root = () => {
       <Layout style={{ minHeight: "100vh" }}>
         {mobile ? <MobileMenu /> : <DesktopMenu />}
         <Layout>
-          <Content style={{ paddingLeft: !mobile ? 300 : 0 }}>
+          <Content
+            style={{
+              paddingLeft: !mobile ? 300 : 0,
+              backgroundColor:
+                theme === "dark" ? colors.darkMode : colors.lightMode,
+            }}
+          >
             <Outlet />
           </Content>
           <DDFooter />

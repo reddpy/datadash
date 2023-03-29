@@ -16,7 +16,13 @@ const ComingSoon = () => {
         justify={"center"}
         style={{ height: "100%", width: "100%", alignItems: "center" }}
       >
-        <Col style={{ textAlign: "center", marginTop: mobile ? "15%" : "" }}>
+        <Col
+          style={{
+            textAlign: "center",
+            marginTop: mobile ? "15%" : "",
+            marginRight: mobile ? "" : "5%",
+          }}
+        >
           <img
             src={theme === "dark" ? WhiteIcon : BlueIcon}
             style={{ height: 150 }}
