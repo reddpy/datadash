@@ -1,12 +1,13 @@
 import { useLoaderData } from "react-router-dom";
+import ComingSoon from "../../UI/comingsoon";
 
 export const loader = () => {
-  return 'wow'
-}
+  return "wow";
+};
 
 const CorporateDataPage = () => {
   const data = useLoaderData();
-  return <p>founder activity corporatedata founders</p>;
-}
+  return <ComingSoon />;
+};
 
 export default CorporateDataPage;

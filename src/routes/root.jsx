@@ -32,6 +32,7 @@ const Root = () => {
               paddingLeft: !mobile ? 300 : 0,
               backgroundColor:
                 theme === "dark" ? colors.darkMode : colors.lightMode,
+              color: theme === "dark" ? 'white' :'',
             }}
           >
             <Outlet />
