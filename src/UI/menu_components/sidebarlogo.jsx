@@ -1,8 +1,8 @@
 import { Space } from "antd";
 import { NavLink } from "react-router-dom";
 import { colors } from "../../../constants";
-import LightLogo from "../../assets/drawbridgeblue.png";
-import DarkLogo from "../../assets/drawbridgewhite.png";
+import DarkBetaLogo from "../../assets/dark-logo-beta.png";
+import LightBetaLogo from "../../assets/light-logo-beta.png";
 import { useRouterActiveStore } from "../../store/navigationstore";
 import { useThemeStore } from "../../store/themestore";
 
@@ -23,7 +23,10 @@ const SidebarLogo = () => {
           padding: "15px 35px",
         }}
       >
-        <img width={200} src={theme === "dark" ? DarkLogo : LightLogo} />
+        <img
+          width={200}
+          src={theme === "dark" ? DarkBetaLogo : LightBetaLogo}
+        />
       </Space>
     </NavLink>
   );
