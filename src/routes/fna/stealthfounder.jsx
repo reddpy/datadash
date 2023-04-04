@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useLoaderData } from "react-router-dom";
 import ComingSoon from "../../UI/comingsoon";
 
@@ -10,12 +10,23 @@ export const loader = async () => {
   return "wow";
 };
 
+const { tableau } = window;
+
 const StealthFounderPage = () => {
+  const ref = useRef(null);
   const data = useLoaderData();
+  const url =
+    "https://public.tableau.com/views/StartupRegions_16805732464650/StartupRegions&:showVizHome=no&:showShareOptions=false";
 
-  useEffect(() => {}, [data]);
+  const initViz = () => {
+    new tableau.Viz(ref.current, url, { hideTabs: true });
+  };
 
-  return <ComingSoon />;
+  useEffect(initViz, []);
+
+  // useEffect(() => {}, [data]);
+
+  return <div ref={ref} style={{ height: "90%", width: "100%" }} />;
 };
 
 export default StealthFounderPage;
