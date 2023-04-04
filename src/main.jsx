@@ -1,43 +1,55 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import './main.css';
-import CorporateDataPage, { loader as CorporateDataLoader } from "./routes/fna/corporatedata";
-import LocationsPage, { loader as LocationsLoader } from "./routes/fna/locations";
-import StealthFounderPage, { loader as StealthFounderLoader } from "./routes/fna/stealthfounder";
+import "./main.css";
+import CorporateDataPage, {
+  loader as CorporateDataLoader,
+} from "./routes/fna/corporatedata";
+import LocationsPage, {
+  loader as LocationsLoader,
+} from "./routes/fna/locations";
+import StealthFounderPage, {
+  loader as StealthFounderLoader,
+} from "./routes/fna/stealthfounder";
 import Root from "./routes/root";
-import InvestmentProfilesPage, { loader as InvestmentProfilesLoader } from "./routes/vca/investmentprofiles";
-import InvestmentsPage, { loader as InvestmentsLoader } from "./routes/vca/investments";
+import InvestmentProfilesPage, {
+  loader as InvestmentProfilesLoader,
+} from "./routes/vca/investmentprofiles";
+import InvestmentsPage, {
+  loader as InvestmentsLoader,
+} from "./routes/vca/investments";
+import Welcome from "./UI/welcome";
 
 const routerObj = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
     children: [
+      { index: true, element: <Welcome /> },
       {
         path: "fna/stealthfounder",
         element: <StealthFounderPage />,
-        loader: StealthFounderLoader
+        loader: StealthFounderLoader,
       },
       {
         path: "fna/corporatedata",
         element: <CorporateDataPage />,
-        loader: CorporateDataLoader
+        loader: CorporateDataLoader,
       },
       {
         path: "fna/locations",
         element: <LocationsPage />,
-        loader: LocationsLoader
+        loader: LocationsLoader,
       },
       {
         path: "vca/investments",
         element: <InvestmentsPage />,
-        loader: InvestmentsLoader
+        loader: InvestmentsLoader,
       },
       {
         path: "vca/investorprofiles",
         element: <InvestmentProfilesPage />,
-        loader: InvestmentProfilesLoader
+        loader: InvestmentProfilesLoader,
       },
     ],
   },
