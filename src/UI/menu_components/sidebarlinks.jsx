@@ -1,9 +1,9 @@
 import { BankOutlined, BuildOutlined } from "@ant-design/icons";
 import { Menu } from "antd";
 import { useNavigate } from "react-router-dom";
+import { colors } from "../../../constants";
 import { useRouterActiveStore } from "../../store/navigationstore";
 import { useThemeStore } from "../../store/themestore";
-import { colors } from "../../../constants";
 
 function getItem(label, key, icon, children, type) {
   return {
@@ -16,9 +16,10 @@ function getItem(label, key, icon, children, type) {
 }
 const items = [
   getItem("Founder Activity", "founder_activity", <BuildOutlined />, [
-    getItem("Stealth Founders", "fna/stealthfounder"),
-    getItem("Corporate Data", "fna/corporatedata"),
-    getItem("Locations", "fna/locations"),
+    getItem("YC Company HQs", "fna/yc-companyhq"),
+    getItem("YC Founder Prior Employers", "fna/yc-prioremployer"),
+    getItem("YC Founder Schools", "fna/yc-schools"),
+    getItem("YC Founder Roles", "fna/yc-founderrole"),
   ]),
 
   getItem("VC Activity", "vc_activity", <BankOutlined />, [
