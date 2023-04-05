@@ -1,0 +1,54 @@
+{
+    "data": [
+        {
+            "value": "Google",
+            "highlighted": "Google",
+            "count": 482
+        },
+        {
+            "value": "Microsoft",
+            "highlighted": "Microsoft",
+            "count": 261
+        },
+        {
+            "value": "Facebook",
+            "highlighted": "Facebook",
+            "count": 253
+        },
+        {
+            "value": "Amazon",
+            "highlighted": "Amazon",
+            "count": 141
+        },
+        {
+            "value": "Stanford University",
+            "highlighted": "Stanford University",
+            "count": 139
+        },
+        {
+            "value": "Goldman Sachs",
+            "highlighted": "Goldman Sachs",
+            "count": 129
+        },
+        {
+            "value": "Apple",
+            "highlighted": "Apple",
+            "count": 116
+        },
+        {
+            "value": "Uber",
+            "highlighted": "Uber",
+            "count": 96
+        },
+        {
+            "value": "McKinsey & Company",
+            "highlighted": "McKinsey & Company",
+            "count": 76
+        },
+        {
+            "value": "IBM",
+            "highlighted": "IBM",
+            "count": 72
+        }
+    ]
+}

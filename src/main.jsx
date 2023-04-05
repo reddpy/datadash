@@ -2,15 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./main.css";
-import CorporateDataPage, {
-  loader as CorporateDataLoader,
-} from "./routes/fna/corporatedata";
-import LocationsPage, {
-  loader as LocationsLoader,
-} from "./routes/fna/locations";
-import StealthFounderPage, {
-  loader as StealthFounderLoader,
-} from "./routes/fna/stealthfounder";
+import YCCompanyHQ, { loader as YCCompanyHQLoader } from "./routes/fna/yc-companyhq";
+import YCFounderPriorEmployer, { loader as YCFounderPriorEmployerLoader } from "./routes/fna/yc-founderprioremployers";
+import YCFounderRole, {
+  loader as YCFounderRoleLoader,
+} from "./routes/fna/yc-founderroles";
+import YCSchools, { loader as YCFounderSchools } from "./routes/fna/yc-schools";
 import Root from "./routes/root";
 import InvestmentProfilesPage, {
   loader as InvestmentProfilesLoader,
@@ -27,19 +24,24 @@ const routerObj = createBrowserRouter([
     children: [
       { index: true, element: <Welcome /> },
       {
-        path: "fna/stealthfounder",
-        element: <StealthFounderPage />,
-        loader: StealthFounderLoader,
+        path: "fna/yc-companyhq",
+        element: <YCCompanyHQ />,
+        loader: YCCompanyHQLoader,
       },
       {
-        path: "fna/corporatedata",
-        element: <CorporateDataPage />,
-        loader: CorporateDataLoader,
+        path: "fna/yc-prioremployer",
+        element: <YCFounderPriorEmployer />,
+        loader: YCFounderPriorEmployerLoader,
       },
       {
-        path: "fna/locations",
-        element: <LocationsPage />,
-        loader: LocationsLoader,
+        path: "fna/yc-founderrole",
+        element: <YCFounderRole />,
+        loader: YCFounderRoleLoader,
+      },
+      {
+        path: "fna/yc-schools",
+        element: <YCSchools />,
+        loader: YCFounderSchools,
       },
       {
         path: "vca/investments",

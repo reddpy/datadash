@@ -1,0 +1,29 @@
+{
+    "data": [
+        {
+            "value": "San Francisco, CA, USA",
+            "highlighted": "San Francisco, CA, USA",
+            "count": 2878
+        },
+        {
+            "value": "New York, NY, USA",
+            "highlighted": "New York, NY, USA",
+            "count": 907
+        },
+        {
+            "value": "Bengaluru, KA, India",
+            "highlighted": "Bengaluru, KA, India",
+            "count": 309
+        },
+        {
+            "value": "London, England, United Kingdom",
+            "highlighted": "London, England, United Kingdom",
+            "count": 307
+        },
+        {
+            "value": "Los Angeles, CA, USA",
+            "highlighted": "Los Angeles, CA, USA",
+            "count": 272
+        }
+    ]
+}

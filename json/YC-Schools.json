@@ -1,0 +1,54 @@
+{
+    "data": [
+        {
+            "value": "Stanford University",
+            "highlighted": "Stanford University",
+            "count": 567
+        },
+        {
+            "value": "Massachusetts Institute of Technology",
+            "highlighted": "Massachusetts Institute of Technology",
+            "count": 390
+        },
+        {
+            "value": "University of California, Berkeley",
+            "highlighted": "University of California, Berkeley",
+            "count": 388
+        },
+        {
+            "value": "Y Combinator",
+            "highlighted": "Y Combinator",
+            "count": 372
+        },
+        {
+            "value": "University of Waterloo",
+            "highlighted": "University of Waterloo",
+            "count": 204
+        },
+        {
+            "value": "Harvard University",
+            "highlighted": "Harvard University",
+            "count": 198
+        },
+        {
+            "value": "University of Pennsylvania",
+            "highlighted": "University of Pennsylvania",
+            "count": 154
+        },
+        {
+            "value": "Carnegie Mellon University",
+            "highlighted": "Carnegie Mellon University",
+            "count": 150
+        },
+        {
+            "value": "Columbia University",
+            "highlighted": "Columbia University",
+            "count": 148
+        },
+        {
+            "value": "Cornell University",
+            "highlighted": "Cornell University",
+            "count": 131
+        }
+    ]
+}
